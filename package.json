@@ -1,0 +1,19 @@
+{
+  "name": "positon-maker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RadioJackie/Positon-Maker.git"
+  },
+  "author": "Jacob Peters",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RadioJackie/Positon-Maker/issues"
+  },
+  "homepage": "https://github.com/RadioJackie/Positon-Maker#readme"
+}
