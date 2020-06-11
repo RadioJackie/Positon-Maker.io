@@ -10,34 +10,31 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
 
+run();
+
 async function run() {
     let cont = true;
     const employees = [];
 
-    const employeeJob = await inquirer.prompt([
-        {
-            type: "input",
-            message: "ID: ",
-            name: "id"
-        },
-        {
-            type: "input",
-            message: "Name: ",
-            name: "name"
-        },
-        {
-            type: "input",
-            message: "Email: ",
-            name: "email"
-        },
-        {
-            type: "input",
-            message: "Title: ",
-            name: "title"
-        }
+    while (cont === true) {
+        const employeeType = await inquirer.prompt({
+            type: "list",
+            name: "employeeType",
+            message: "What type of employee would you like to add?",
+            choices: ["Engineer", "Intern", "Manager"]
+        })
+        const newEmployee = generateEmployee(employeeType.employeeType, await inquirer.prompt(generateQuestions(employeeType.employeeType)));
+        employees.push(newEmployee);
 
-    ]);
+        const userCont = await inquirer.prompt({
+            type: "confirm",
+            name: "cont",
+            message: "Would you like to add another employee?"
+        })
+        cont = userCont.cont;
+    }
 
+   
 
     // Write code to use inquirer to gather information about the development team members,
     // and to create objects for each team member (using the correct classes as blueprints!)

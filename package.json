@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/RadioJackie/Positon-Maker#readme",
   "dependencies": {
+    "git-ignore-parser": "0.0.2",
     "inquirer": "^7.1.0"
   }
 }
