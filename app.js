@@ -15,7 +15,7 @@ const idArray = [];
 
 function appMenu() {
 
-  function createManager() {
+  function createManager() {         
     console.log("Please build your team");
     inquirer.prompt([
       {
